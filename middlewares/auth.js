@@ -6,7 +6,7 @@ const SECRET_JWT_CODE = "psmR3HuOihHKfqZymo1m";
 const salt = bcrypt.genSaltSync(10);
 
 // Middleware pour vérifier l'authentification de l'utilisateur
-const verifyToken = (req, res, next) => {
+export const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"];
   if (!token) {
     return res.status(401).send("Token d'authentification manquant");
